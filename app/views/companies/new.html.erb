@@ -1,0 +1,30 @@
+<h2>Create a company profile</h2>
+
+<%= form_for @company do |f| %>
+  <p>
+    <%= f.label(:name) %>
+    <%= f.text_field(:name, :required => true) %>
+  </p>
+  <p>
+    <%= f.label(:overview) %>
+    <%= f.text_field(:overview, :required => true) %>
+  </p>
+  <p>
+    <%= f.label(:image) %>
+    <%= f.text_field(:image, :required => true) %>
+  </p>
+  <p>
+    <%= f.label(:industry) %>
+    <%= f.text_field(:industry, :required => true) %>
+  </p>
+  <p>
+    <%= f.label(:CEO) %>
+    <%= f.text_field(:CEO, :required => true) %>
+  </p>
+  <p>
+    <%= f.label(:location) %>
+    <%= f.text_field(:location, :required => true) %>
+  </p>
+
+  <%= f.submit %>
+<% end %>

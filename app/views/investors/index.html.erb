@@ -1,0 +1,11 @@
+<h2>This is the index page of all investors</h2>
+
+<ul>
+  <% @investors.each do |investor| %>
+    <li>Name: <%= link_to(investor.name, "/investors/#{investor.id}") %></li>
+    <li>Image: <%= investor.image %></li>
+    <li>Location: <%= investor.location %></li>
+    <br>
+
+  <% end %>
+</ul>

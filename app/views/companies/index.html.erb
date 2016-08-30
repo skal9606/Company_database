@@ -1,0 +1,12 @@
+<h2>This is the index page of all companies</h2>
+
+<ul>
+  <% @companies.each do |company| %>
+    <li>Company: <%= link_to(company.name, "/companies/#{company.id}") %></li>
+    <li>Industry: <%= company.industry %></li>
+    <li>CEO: <%= company.CEO %></li>
+    <li>Location: <%= company.location %></li>
+    <br>
+
+  <% end %>
+</ul>

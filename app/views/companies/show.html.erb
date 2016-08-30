@@ -1,0 +1,66 @@
+<h2>This is the individual page of: <%= @company.name %> </h2>
+<br>
+
+
+<h3>Overview</h3>
+<hr>
+  <ul>
+    <li>Overview: <%= @company.overview %></li>
+    <li>Industry: <%= @company.industry %></li>
+    <li>CEO: <%= @company.CEO %></li>
+    <li>Location: <%= @company.location %></li>
+  </ul>
+
+
+
+<br>
+<h3>Key employees</h3>
+<hr>
+  <ul>
+    <% @company.employees.each do |employee| %>
+    <li><%= employee.name %></li>
+    <% end %>
+  </ul>
+
+
+
+<br>
+<h3>Key investors</h3>
+<hr>
+<ul>
+  <% @company.investors.each do |investor| %>
+  <li><%= investor.name %></li>
+  <% end %>
+</ul>
+
+
+
+<br>
+<h3>Followers</h3>
+<hr>
+<ul>
+  <% @company.followers.each do |follower| %>
+  <li><%= follower.name %></li>
+  <% end %>
+</ul>
+
+
+
+<br>
+<h3>Jobs board</h3>
+<hr>
+<ul>
+  <% @company.jobs.each do |job| %>
+  <li><%= job.title %></li>
+  <li><%= job.role %></li>
+  <li><%= job.salary %></li>
+  <br>
+  <% end %>
+</ul>
+
+
+<hr>
+<div class="controls">
+  <%= link_to "Edit #{@company.name}","/companies/#{@company.id}/edit" %>
+  <%= link_to "Delete #{@company.name}","/companies/#{@company.id}/delete", :method => :delete, :data => {:confirm => "Are you sure?"} %>
+</div>
